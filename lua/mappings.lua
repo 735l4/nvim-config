@@ -8,6 +8,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- custom mappings
-map("n", "<leader>gs", vim.cmd.Git)
+map("n", "<leader>gs", vim.cmd.Git, {desc = "Vim Fugetive Git"})
+map("n", "<leader>b", require("telescope.builtin").buffers)
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

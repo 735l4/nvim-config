@@ -37,7 +37,7 @@ return {
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
     config = function()
-      require("flutter-tools").config = {}
+      require("flutter-tools").setup {}
     end
   },
   {
@@ -52,9 +52,9 @@ return {
   	},
   },
   {
-    "tpope/vim-fugitive"
-  }
-
+    "tpope/vim-fugitive",
+    lazy=false
+  },
   -- These are some examples, uncomment them if you want to see them work!
   -- {
   --   "neovim/nvim-lspconfig",
