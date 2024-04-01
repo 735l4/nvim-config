@@ -12,6 +12,8 @@ return {
   		ensure_installed = {
         "eslint-lsp",
   			"typescript-language-server",
+        "phpactor",
+        "emmet-ls"
   		},
   	},
   },
@@ -43,12 +45,13 @@ return {
   {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css",
+      ensure_installed = {
+        "vim", "lua", "vimdoc",
+        "html", "css",
         "typescript",
-        "dart"
-  		},
+        "dart",
+        "php"
+      },
   	},
   },
   {
