@@ -11,4 +11,14 @@ map("i", "jk", "<ESC>")
 map("n", "<leader>gs", vim.cmd.Git, {desc = "Vim Fugetive Git"})
 map("n", "<leader>b", require("telescope.builtin").buffers)
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
+map("n", "J", "mzJ`z")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+
+-- greatest remap ever set previous yank into void register
+map("x", "<leader>p", "\"_dp")
