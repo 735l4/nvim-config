@@ -10,6 +10,7 @@ return {
   	"williamboman/mason.nvim",
   	opts = {
   		ensure_installed = {
+        "lua-language-server",
         "eslint-lsp",
   			"typescript-language-server",
         "phpactor",
