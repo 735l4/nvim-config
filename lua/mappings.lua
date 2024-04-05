@@ -22,3 +22,5 @@ map("n", "N", "Nzzzv")
 
 -- greatest remap ever set previous yank into void register
 map("x", "<leader>p", "\"_dp")
+
+require "configs.harpoon"

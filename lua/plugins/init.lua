@@ -51,13 +51,21 @@ return {
         "html", "css",
         "typescript",
         "dart",
-        "php"
+        "php",
+        "tsx",
+        "dockerfile",
+        "markdown",
+        "yaml",
+        "json"
       },
   	},
   },
   {
     "tpope/vim-fugitive",
     lazy=false
+  },
+  {
+    "ThePrimeagen/harpoon",
   },
   -- These are some examples, uncomment them if you want to see them work!
   -- {
