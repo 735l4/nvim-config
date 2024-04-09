@@ -29,3 +29,4 @@ lspconfig.emmet_ls.setup({
   on_init = on_init,
   filetypes = {"css", "html", "php", "typescriptreact"}
 })
+

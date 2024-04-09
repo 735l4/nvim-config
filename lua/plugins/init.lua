@@ -33,6 +33,16 @@ return {
     end,
   },
   {
+    "nvim-telescope/telescope.nvim",
+    config = function ()
+      require("telescope").setup {
+        file_ignore_patterns = {
+            "node_modules",
+        }
+      }
+    end
+  },
+  {
     'akinsho/flutter-tools.nvim',
     lazy = false,
     dependencies = {
