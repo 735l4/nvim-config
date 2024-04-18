@@ -21,8 +21,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
+      require("nvchad.configs.lspconfig").defaults()
     end,
   },
   {
@@ -77,6 +77,11 @@ return {
   {
     "ThePrimeagen/harpoon",
   },
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {} -- your configuration
+  }
   -- These are some examples, uncomment them if you want to see them work!
   -- {
   --   "neovim/nvim-lspconfig",
