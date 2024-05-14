@@ -25,10 +25,6 @@ map("n", "N", "Nzzzv")
 map("x", "<leader>p", "\"_dp")
 map("n", "<leader>q", ":<C-U>bprevious <bar>bd #<CR>")
 
-local nomap = vim.keymap.del
-
-nomap("n", "<leader>v");
-
 nomap("n", "<leader>v");
 
 -- Open tmux sessionizer
