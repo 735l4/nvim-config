@@ -3,6 +3,7 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
+local nomap = vim.keymap.del
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
@@ -22,5 +23,10 @@ map("n", "N", "Nzzzv")
 
 -- greatest remap ever set previous yank into void register
 map("x", "<leader>p", "\"_dp")
+
+nomap("n", "<leader>v");
+
+-- Open tmux sessionizer
+map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 require "configs.harpoon"

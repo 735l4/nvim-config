@@ -14,7 +14,8 @@ return {
         "eslint-lsp",
   			"typescript-language-server",
         "phpactor",
-        "emmet-ls"
+        "emmet-ls",
+        "gopls"
   		},
   	},
   },
@@ -59,6 +60,7 @@ return {
       ensure_installed = {
         "vim", "lua", "vimdoc",
         "html", "css",
+        'javascript',
         "typescript",
         "dart",
         "php",
@@ -77,6 +79,22 @@ return {
   {
     "ThePrimeagen/harpoon",
   },
+  {
+    "numToStr/Comment.nvim",
+    lazy = false,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      "nvim-treesitter/nvim-treesitter"
+    },
+    config = function ()
+      require("Comment").setup {
+        pre_hook = function()
+          return vim.bo.commentstring
+        end
+      }
+    end
+  },
+
   -- These are some examples, uncomment them if you want to see them work!
   -- {
   --   "neovim/nvim-lspconfig",

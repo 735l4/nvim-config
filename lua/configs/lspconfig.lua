@@ -30,3 +30,9 @@ lspconfig.emmet_ls.setup({
   filetypes = {"css", "html", "php", "typescriptreact"}
 })
 
+
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"}
+})
