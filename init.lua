@@ -54,3 +54,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.schedule(function()
   require "mappings"
 end)
+
+vim.opt.clipboard = ""
