@@ -14,8 +14,9 @@ return {
         "eslint-lsp",
   			"typescript-language-server",
         "phpactor",
+        "intelephense",
         "emmet-ls",
-        "gopls"
+        "gopls",
   		},
   	},
   },
@@ -54,27 +55,68 @@ return {
       require("flutter-tools").setup {}
     end
   },
-  {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-      ensure_installed = {
-        "vim", "lua", "vimdoc",
-        "html", "css",
-        'javascript',
-        "typescript",
-        "dart",
-        "php",
-        "tsx",
-        "dockerfile",
-        "markdown",
-        "yaml",
-        "json"
-      },
-  	},
+  -- {
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  --     ensure_installed = {
+  --       "vim", "lua", "vimdoc",
+  --       "html", "css",
+  --       'javascript',
+  --       "typescript",
+  --       "dart",
+  --       "php",
+  --       "tsx",
+  --       "dockerfile",
+  --       "markdown",
+  --       "yaml",
+  --       "json"
+  --     },
+  -- 	},
+  -- },
+{
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      -- Ensure required parsers are installed, including Blade
+      opts.ensure_installed = vim.list_extend(opts.ensure_installed or {}, {
+        "vim", "lua", "vimdoc", "html", "css",
+        "javascript", "typescript", "dart",
+        "php", "tsx", "dockerfile", "markdown",
+        "yaml", "json", "blade",
+      })
+
+      -- Enable Treesitter highlighting
+      opts.highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      }
+
+      -- Configure the custom Blade parser
+      local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+      parser_config.blade = {
+        install_info = {
+          url = "https://github.com/EmranMR/tree-sitter-blade",
+          files = { "src/parser.c" },
+          branch = "main",
+        },
+        filetype = "blade",
+      }
+
+      -- Add custom filetype mapping for Blade
+      vim.filetype.add({
+        extension = {
+          blade = "blade",
+        },
+        pattern = {
+          [".*%.blade%.php"] = "blade",
+        },
+      })
+
+      require("nvim-treesitter.configs").setup(opts)
+    end,
   },
-  {
-    "tpope/vim-fugitive",
-    lazy=false
+{
+  "tpope/vim-fugitive",
+  lazy=false
   },
   {
     "ThePrimeagen/harpoon",

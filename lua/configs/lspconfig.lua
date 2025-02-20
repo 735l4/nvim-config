@@ -23,11 +23,57 @@ lspconfig.phpactor.setup {
   }
 }
 
+lspconfig.intelephense.setup {
+  on_attach = on_attach,
+  init_options = {
+    ["language_server_phpstan.enabled"] = false,
+    ["language_server_psalm.enabled"] = false,
+  },
+  settings = {
+    intelephense = {
+      stubs = {
+        "bcmath",
+        "bz2",
+        "Core",
+        "curl",
+        "date",
+        "dom",
+        "fileinfo",
+        "filter",
+        "gd",
+        "hash",
+        "iconv",
+        "json",
+        "libxml",
+        "mbstring",
+        "mcrypt",
+        "openssl",
+        "pcre",
+        "PDO",
+        "phar",
+        "readline",
+        "Reflection",
+        "session",
+        "SimpleXML",
+        "sodium",
+        "standard",
+        "tokenizer",
+        "xml",
+        "xmlreader",
+        "xmlwriter",
+        "zip",
+        "zlib",
+        "laravel"
+      }
+    }
+  }
+}
+
 lspconfig.emmet_ls.setup({
   on_attach = on_attach,
   capapabilities = capabilities,
   on_init = on_init,
-  filetypes = {"css", "html", "php", "typescriptreact", "twig"}
+  filetypes = {"css", "html", "php", "typescriptreact", "twig", "blade"}
 })
 
 
